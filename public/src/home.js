@@ -22,6 +22,7 @@ function getMostCommonGenres(books) {
     }
     return acc;
   }, {});
+  /*used helper function here to reduce the amount of lines and make the code easier to read */
   const sort = sortFunction(countByGenre);
   return sort.map((name) => ({ name, count: countByGenre[name] })).slice(0, 5);
 }
@@ -54,7 +55,7 @@ function getMostPopularAuthors(books, authors) {
     .sort((a, b) => (a.count > b.count ? -1 : 1))
     .slice(0, 5);
 }
-
+/*function below is helper function */
 function sortFunction(obj) {
   const key = Object.keys(obj);
   return key.sort((keyA, keyB) => {
