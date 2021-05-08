@@ -6,15 +6,17 @@ return result;
 };
 
 function findBookById(books, id) {
+  /* used a for loop just to showcase different code */
   for (let i = 0; i < books.length; i++) {
     const book = books[i];
     if (book.id === id)
-    return book
+    return book;
   } 
 }
 
 function partitionBooksByBorrowedStatus(books) {
   let partition = [];
+  /* this method is much cleaner than doing for loops */
   partition.push(books.filter(({ borrows }) => !borrows[0].returned));
   partition.push(books.filter(({ borrows }) => borrows[0].returned));
   return partition;
